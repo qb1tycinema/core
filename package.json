@@ -1,0 +1,23 @@
+{
+  "name": "@qb1tycinema/core",
+  "version": "1.0.0",
+  "description": "Core utilities and shared setup",
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Arsen",
+    "email": "arman205082@gmail.com"
+  },
+  "peerDependencies": {
+    "prettier": "^3.9.6"
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2"
+  },
+  "exports": {
+    "prettier": "./src/prettier.config.mjs"
+  }
+}
