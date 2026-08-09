@@ -1,4 +1,4 @@
-name: Qb1ty
+name: Publish
 
 on:
   push:
@@ -7,14 +7,20 @@ on:
 
 jobs:
   publish:
+    name: Publish Job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: "https://registry.npmjs.org"
           scope: "@qb1tycinema"
-      - run: npm publish --access public --loglevel verbose
+
+      - name: Publish package
+        run: npm publish --access public --loglevel verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
